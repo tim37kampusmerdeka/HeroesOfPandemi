@@ -10,10 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2974300927770023991}
   - component: {fileID: 2974300927770023988}
+  - component: {fileID: -7953880070477514264}
   - component: {fileID: 5510433658283240808}
+  - component: {fileID: 4381662039021699679}
+  - component: {fileID: -5309846529751295642}
   m_Layer: 0
   m_Name: Enemy 2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -80982939
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 93ef09fc4b88bc54e8d1d376e3018e3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -83,6 +86,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &-7953880070477514264
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2974300927770023990}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.057715386, y: -0.07325411}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.171875, y: 1.171875}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9143757, y: 0.85666037}
+  m_EdgeRadius: 0
 --- !u!114 &5510433658283240808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,4 +124,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae94b89db565f0b4a949e36a5af4c791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.7
+  speed: 1.2
+--- !u!114 &4381662039021699679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2974300927770023990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d5365ebd2be9b4e82a66e289113a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 160
+  OnEnemyDead: 0
+  enemyMovement: {fileID: 5510433658283240808}
+  Health: 0
+--- !u!114 &-5309846529751295642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2974300927770023990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06108b3dfdc2acb468b5a389aae5dbd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBullet: {fileID: 8069912198878699570, guid: 22bb5459236363e46b2de67b90dd1d18, type: 3}
