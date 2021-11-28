@@ -6,6 +6,8 @@ public class EnemyMovement : MonoBehaviour
 {
     //
     public float speed = 0.7f;
+    private Transform pullObject;
+    private float delay;
 
     void Update()
     {
@@ -19,9 +21,18 @@ public class EnemyMovement : MonoBehaviour
 
     public IEnumerator TurnOffEnemy(Transform pullObject, float delay)
     {
+        this.pullObject = pullObject;
+        this.delay = delay;
+
         yield return new WaitForSeconds(delay);
         gameObject.transform.SetParent(pullObject);
         gameObject.SetActive(false);
 
+    }
+
+    public void OnDead(float delay)
+    {
+        StopAllCoroutines();
+        StartCoroutine(TurnOffEnemy(pullObject, delay));
     }
 }
