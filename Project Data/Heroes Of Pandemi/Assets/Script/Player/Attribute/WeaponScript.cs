@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WeaponScript : MonoBehaviour
 {
-    public float speed = 500, atkSpeed = 0.8f, damage;
+    public float speed = 500, atkSpeed = 0.8f;
+    public int damage;
     private Rigidbody2D rb;
     private void Start()
     {
@@ -15,6 +16,16 @@ public class WeaponScript : MonoBehaviour
         rb.velocity = Vector2.right * speed;
         StartCoroutine(SetOff());
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            collision.GetComponent<EnemyHealthSystem>().ReduceHealth(damage);
+            this.gameObject.SetActive(false);
+        }
+    }
+
     IEnumerator SetOff()
     {
         yield return new WaitForSeconds(3);
