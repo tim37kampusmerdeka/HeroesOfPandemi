@@ -18,7 +18,7 @@ public class PlayerHealthSystem : MonoBehaviour
         barText.text = health + "/" + maxHealth;
 
         //Invoke void trydamage
-        InvokeRepeating("TryDamage", 5, 0.1f);
+        //InvokeRepeating("TryDamage", 5, 0.1f);
     }
     void OnPlayerDead(bool dead = false)
     {
