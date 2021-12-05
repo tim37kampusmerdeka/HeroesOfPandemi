@@ -6,8 +6,9 @@ public class WeaponScript : MonoBehaviour
 {
     public float speed = 500, atkSpeed = 0.8f;
     public int damage;
-    private Rigidbody2D rb;
-    private void Start()
+    private Rigidbody2D rb;    
+
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }

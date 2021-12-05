@@ -124,7 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae94b89db565f0b4a949e36a5af4c791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.2
+  speed: 1
+  scoreValue: 100
 --- !u!114 &-741343759740346484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d5365ebd2be9b4e82a66e289113a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 160
+  MaxHealth: 80
   OnEnemyDead: 0
   enemyMovement: {fileID: 6367116023487748296}
   Health: 0

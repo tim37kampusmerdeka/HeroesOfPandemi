@@ -41,7 +41,7 @@ public class PlayerShoot : MonoBehaviour
                 }
             }
             time = 0;
-            Debug.Log("Shoot");
+            //Debug.Log("Shoot");
         }
     }
 }
