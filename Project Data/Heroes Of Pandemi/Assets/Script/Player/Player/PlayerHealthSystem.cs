@@ -25,7 +25,7 @@ public class PlayerHealthSystem : MonoBehaviour
         if (dead)
         {
             this.gameObject.SetActive(false);
-            healthbarPrefab.SetActive(false);
+            //healthbarPrefab.SetActive(false);
         }
     }
     public void TakeDamage(int amount)
