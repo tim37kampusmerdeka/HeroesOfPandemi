@@ -25,6 +25,14 @@ public class GameManager : MonoBehaviour
     public bool isDelayBetweenWave = false;
     public bool isTimerRunning = true;
 
+    public ScoreManager scoreManager;
+
+    // Initialize Game
+    void InitGame()
+    {
+
+    }
+
     private void Start()
     {
         //gameStatus = GameStatus.FirstWave;
@@ -32,11 +40,21 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+        ForTesting();
+
         if (isTimerRunning)
         {
             TimeController();
         }
+
+
     }
+
+    void ForTesting()
+    {
+       if(Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void PlayerCondition (bool win)
     {
         if (win)
@@ -59,7 +77,7 @@ public class GameManager : MonoBehaviour
         else
         {
             isTimerRunning = false;
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
         }
         Debug.Log(timer);
 
@@ -100,6 +118,7 @@ public class GameManager : MonoBehaviour
         isTimerRunning = true;
     }
 
+    
 }
 
 public enum GameStatus
