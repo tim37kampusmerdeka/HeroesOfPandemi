@@ -5,9 +5,10 @@ using UnityEngine;
 public class EnemyHealthSystem : MonoBehaviour
 {
     public float MaxHealth;
+    public float Health = 0f;
+    public int scoreValue = 100;
     public bool OnEnemyDead = false;
     public EnemyMovement enemyMovement;
-    public float Health = 0;
 
     void OnEnable()
     {
@@ -34,6 +35,7 @@ public class EnemyHealthSystem : MonoBehaviour
             {
                 OnDead();
                 OnEnemyDead = true;
+                GameManager.Instance.scoreManager.score += scoreValue;
             }
         }
     }

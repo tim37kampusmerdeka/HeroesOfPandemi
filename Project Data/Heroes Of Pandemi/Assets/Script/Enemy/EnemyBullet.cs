@@ -7,7 +7,7 @@ public class EnemyBullet : MonoBehaviour
     [Header("Attack Parameters")]
     public float speed;
     public float cooldown;
-    public float damage;        
+    public int damage;        
     
     void Update()
     {
@@ -18,7 +18,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<EnemyHealthSystem>().ReduceHealth(10);
+            collision.GetComponent<PlayerHealthSystem>().TakeDamage(damage);
             this.gameObject.SetActive(false);
         }
     }

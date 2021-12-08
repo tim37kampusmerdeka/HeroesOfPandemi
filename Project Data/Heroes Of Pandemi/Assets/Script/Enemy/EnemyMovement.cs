@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    //
-    public float speed = 0.7f;
+    //Inisiasi variabel yang dibutuhkan
+    public float speed = 1f;
+    
     private Transform pullObject;
     private float delay;
 
@@ -33,6 +34,6 @@ public class EnemyMovement : MonoBehaviour
     public void OnDead(float delay)
     {
         StopAllCoroutines();
-        StartCoroutine(TurnOffEnemy(pullObject, delay));
+        StartCoroutine(TurnOffEnemy(pullObject, delay));        
     }
 }

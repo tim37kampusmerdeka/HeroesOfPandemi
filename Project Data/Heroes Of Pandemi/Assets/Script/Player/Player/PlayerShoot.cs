@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
+    public Transform shootingPos;
     float time;
     Animator animator;
     private PoolManagers _pool;
@@ -25,9 +26,10 @@ public class PlayerShoot : MonoBehaviour
     }
     void Shooting()
     {
-        Vector2 pos = this.transform.position;
-        pos.x = pos.x + 1;
-        pos.y = pos.y - 0.37f;
+        Vector3 pos = shootingPos.position;
+        //pos.x = pos.x + 1;
+        //pos.y = pos.y - 0.37f;
+
         if (Input.GetKeyDown(KeyCode.L))
         {
             for (int i = 0; i < _pool.bulletList.Count; i++)
@@ -41,7 +43,7 @@ public class PlayerShoot : MonoBehaviour
                 }
             }
             time = 0;
-            Debug.Log("Shoot");
+            //Debug.Log("Shoot");
         }
     }
 }

@@ -18,17 +18,17 @@ public class PlayerHealthSystem : MonoBehaviour
         barText.text = health + "/" + maxHealth;
 
         //Invoke void trydamage
-        InvokeRepeating("TryDamage", 5, 0.1f);
+        //InvokeRepeating("TryDamage", 5, 0.1f);
     }
     void OnPlayerDead(bool dead = false)
     {
         if (dead)
         {
             this.gameObject.SetActive(false);
-            healthbarPrefab.SetActive(false);
+            //healthbarPrefab.SetActive(false);
         }
     }
-    void TakeDamage(int amount)
+    public void TakeDamage(int amount)
     {
         health -= amount;
         healthSlider.value = health;
@@ -38,10 +38,10 @@ public class PlayerHealthSystem : MonoBehaviour
             OnPlayerDead(true);
         }
     }
-    //Test Damage
+    /*Test Damage
     void TryDamage()
     {
         TakeDamage(1);
-    }
+    }*/
 
 }
