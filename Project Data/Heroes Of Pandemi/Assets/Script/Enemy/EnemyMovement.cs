@@ -16,26 +16,24 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
-        //moving = true;
+        PlayingAnim("enemy_walk");
     }
 
     void Update()
     {
         Move();
     }
-    //
+    
     void Move()
     {
         transform.Translate(-transform.right * speed * Time.deltaTime);
-        PlayingAnim("enemy_walk");
-
-        //anim.animation.Play(("enemy_idle"));
     }
 
     public IEnumerator TurnOffEnemy(UnityEngine.Transform pullObject, float delay)
     {
         this.pullObject = pullObject;
         this.delay = delay;
+        anim.animation.Play(("enemy_idle"));
 
         yield return new WaitForSeconds(delay);
         gameObject.transform.SetParent(pullObject);
