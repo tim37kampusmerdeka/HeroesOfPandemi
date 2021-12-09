@@ -1,14 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DragonBones;
 
 public class EnemyMovement : MonoBehaviour
 {
     //Inisiasi variabel yang dibutuhkan
     public float speed = 1f;
-    
-    private Transform pullObject;
+
+    public UnityArmatureComponent anim;
+
+    private UnityEngine.Transform pullObject;
     private float delay;
+    //bool moving = true;
+
+    void Start()
+    {
+        //moving = true;
+    }
 
     void Update()
     {
@@ -18,9 +27,12 @@ public class EnemyMovement : MonoBehaviour
     void Move()
     {
         transform.Translate(-transform.right * speed * Time.deltaTime);
+        PlayingAnim("enemy_walk");
+
+        //anim.animation.Play(("enemy_idle"));
     }
 
-    public IEnumerator TurnOffEnemy(Transform pullObject, float delay)
+    public IEnumerator TurnOffEnemy(UnityEngine.Transform pullObject, float delay)
     {
         this.pullObject = pullObject;
         this.delay = delay;
@@ -35,5 +47,10 @@ public class EnemyMovement : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(TurnOffEnemy(pullObject, delay));        
+    }
+
+    void PlayingAnim(string animName)
+    {
+        anim.animation.FadeIn(animName, 0.2f, 0);
     }
 }

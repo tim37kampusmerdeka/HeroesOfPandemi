@@ -6,6 +6,7 @@ public class EnemyShoot : MonoBehaviour
 {
     float time;
     private PoolEnemyBullets pool;
+
     [SerializeField] EnemyBullet enemyBullet;
 
     void Start()
@@ -13,7 +14,6 @@ public class EnemyShoot : MonoBehaviour
         pool = GameObject.FindObjectOfType<PoolEnemyBullets>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
