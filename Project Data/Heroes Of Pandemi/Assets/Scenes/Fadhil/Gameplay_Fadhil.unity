@@ -552,7 +552,7 @@ GameObject:
   - component: {fileID: 502138050}
   - component: {fileID: 502138049}
   m_Layer: 0
-  m_Name: Pool EnemyBullets
+  m_Name: PoolEnemyBullets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

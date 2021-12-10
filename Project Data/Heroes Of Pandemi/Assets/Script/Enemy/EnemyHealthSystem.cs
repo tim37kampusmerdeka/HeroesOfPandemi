@@ -33,30 +33,31 @@ public class EnemyHealthSystem : MonoBehaviour
         if (Health > 0)
         {
             Health -= damage;
-            //StartCoroutine(Hit());
+            StartCoroutine(Hit());
         }
         else
         {
             if (!OnEnemyDead)
             {
                 OnDead();
+                PlayingAnim("enemy_dead");
                 OnEnemyDead = true;
                 GameManager.Instance.scoreManager.score += scoreValue;
             }
         }
     }
 
-    /*IEnumerator Hit()
+    IEnumerator Hit()
     {
-        GetComponent<SpriteRenderer>().color = Color.red;
-        yield return new WaitForSeconds(0.2f);
-        GetComponent<SpriteRenderer>().color = Color.white;
-    }*/
+        //GetComponent<SpriteRenderer>().color = Color.red;
+        PlayingAnim("enemy_getHit");
+        yield return new WaitForSeconds(0.1f);
+        //GetComponent<SpriteRenderer>().color = Color.white;
+    }
 
     void OnDead()
-    {
-        PlayingAnim("enemy_dead");
-        enemyMovement.OnDead(0.1f);
+    {       
+        enemyMovement.OnDead(1.25f);
     }
 
     void PlayingAnim(string animName)
