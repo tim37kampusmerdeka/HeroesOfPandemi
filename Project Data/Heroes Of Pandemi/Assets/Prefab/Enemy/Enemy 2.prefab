@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 5510433658283240808}
   - component: {fileID: 4381662039021699679}
   - component: {fileID: -5309846529751295642}
+  - component: {fileID: 5308491536000065482}
   m_Layer: 0
   m_Name: Enemy 2
   m_TagString: Enemy
@@ -318,6 +319,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBullet: {fileID: 8069912198878699570, guid: 22bb5459236363e46b2de67b90dd1d18, type: 3}
+--- !u!114 &5308491536000065482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2974300927770023990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f825bb5ce93d6ab429dfa508444119b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unityData: {fileID: 0}
+  armatureName: 
+  isUGUI: 0
+  debugDraw: 0
+  animationName: 
+  _playTimes: 0
+  _timeScale: 1
+  _sortingMode: 0
+  _sortingLayerName: Default
+  _sortingOrder: 0
+  _zSpace: 0
+  _flipX: 0
+  _flipY: 0
+  _closeCombineMeshs: 0
 --- !u!1 &4978864893374008359
 GameObject:
   m_ObjectHideFlags: 0
