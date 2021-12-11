@@ -6,7 +6,7 @@ public class WaveManager : MonoBehaviour
 {
     public Wave[] waves;
     public Transform[] enemySpawnPoints;
-    public float timeBetweenWave = 5;
+    public float timeBetweenWave;
     private float timer;
 
     private Wave currentWave;
@@ -14,14 +14,18 @@ public class WaveManager : MonoBehaviour
     private bool canSpawnEnemy = true;
     private float rateSpawnEnemy;
 
+    // Ubah dari script enemy factory di baris 63
+    private EnemyFactory _poolEnemies;
+
     private void Start()
     {
         timer = timeBetweenWave;
+
+        _poolEnemies = GameObject.FindObjectOfType<EnemyFactory>();
     }
     void Update()
     {
         currentWave = waves[currentWaveIndex];
-        timeBetweenWave -= Time.deltaTime;
         SpawnWave();
         NextWave();
     }
@@ -30,15 +34,20 @@ public class WaveManager : MonoBehaviour
     {
         if (canSpawnEnemy && rateSpawnEnemy < Time.time)
         {
-            // Membuat random Enemy dan posisi randown spawn
-            GameObject randomEnemy = currentWave.enemiesType[Random.Range(0, currentWave.enemiesType.Length)];
+            //  Spawn Enemy dari enemy point
             Transform randomPoint = enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)];
 
-            // Instantiate Enemy
-            Instantiate(randomEnemy, randomPoint.position, Quaternion.identity);
-
-            // Setiap instantiate enemy, kurangi total enemy untuk menghitung jumlah spawn enemy
-            currentWave.totalEnemyWave--;
+            for (int i = 0; i < _poolEnemies.listEnemies.Count; i++)
+            {
+                if (_poolEnemies.listEnemies[i].activeInHierarchy == false)
+                {
+                    _poolEnemies.listEnemies[i].SetActive(true);
+                    _poolEnemies.listEnemies[i].transform.position = randomPoint.position;
+                    _poolEnemies.listEnemies[i].transform.rotation = Quaternion.identity;
+                    currentWave.totalEnemyWave--;
+                    break;
+                }
+            }
 
             // Membuat interval antar spawn
             rateSpawnEnemy = Time.time + currentWave.spawnInterval;
@@ -46,15 +55,18 @@ public class WaveManager : MonoBehaviour
             {
                 canSpawnEnemy = false;
             }
+            Debug.Log("Wave :" + currentWave.waveName);
         }
     }
     void NextWave()
     {
         GameObject[] countEnemisNow = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if (countEnemisNow.Length == 0 && !canSpawnEnemy && timeBetweenWave <= 0f && currentWaveIndex + 1 != waves.Length)
+        if (countEnemisNow.Length == 0 && !canSpawnEnemy && currentWaveIndex + 1 != waves.Length)
         {
             timer -= Time.deltaTime;
+            Debug.Log("Timer Delay : " + timer);
+
             if (timer <= 0f)
             {
                 currentWaveIndex++;
@@ -62,7 +74,7 @@ public class WaveManager : MonoBehaviour
                 timer = timeBetweenWave;
             }
         }
-        else
+        if (countEnemisNow.Length == 0 && !canSpawnEnemy && currentWaveIndex + 1 == waves.Length)
         {
             Debug.Log("Wave Finished");
             GameManager.Instance.PlayerCondition(true);

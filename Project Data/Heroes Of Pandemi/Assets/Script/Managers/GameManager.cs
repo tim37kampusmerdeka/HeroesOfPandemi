@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
         if (win)
         {
             Debug.Log("Player Win");
+            StartCoroutine(GameEnd());
         }
         else
         {

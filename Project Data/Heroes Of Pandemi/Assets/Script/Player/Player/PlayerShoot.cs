@@ -28,16 +28,14 @@ public class PlayerShoot : MonoBehaviour
     void Shooting()
     {
         Vector3 pos = shootingPos.position;
-        //pos.x = pos.x + 1;
-        //pos.y = pos.y - 0.37f;
 
         if (Input.GetKeyDown(KeyCode.L) && !GameManager.Instance.isGameOver)
         {
             for (int i = 0; i < _pool.bulletList.Count; i++)
             {
+                animator.animation.Play(("PlayerShooting_alternative2"), 1);
                 if (_pool.bulletList[i].activeInHierarchy == false)
                 {
-                    animator.animation.Play(("PlayerShooting_alternative2"), 1);
                     _pool.bulletList[i].SetActive(true);
                     _pool.bulletList[i].transform.position = pos;
                     _pool.bulletList[i].transform.rotation = Quaternion.identity;
