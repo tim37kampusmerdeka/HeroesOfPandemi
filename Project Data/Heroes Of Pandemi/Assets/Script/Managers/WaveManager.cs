@@ -88,6 +88,5 @@ public class Wave
 {
     public string waveName;
     public int totalEnemyWave;
-    public GameObject[] enemiesType;
     public float spawnInterval;
 }
