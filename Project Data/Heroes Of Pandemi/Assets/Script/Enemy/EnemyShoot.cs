@@ -28,12 +28,13 @@ public class EnemyShoot : MonoBehaviour
     }
     void Firing()
     {
-        PlayingAnim("enemy_shooting");
+        PlayingAnim("enemy_shooting",1.5f);
         EnemyBullet bullet = Instantiate(enemyBullet, gameObject.transform.position, gameObject.transform.rotation);
     }
 
-    void PlayingAnim(string animName)
+    void PlayingAnim(string animName, float timeScale)
     {
         anim.animation.Play(animName);
+        anim.animation.timeScale = timeScale;
     }
 }
