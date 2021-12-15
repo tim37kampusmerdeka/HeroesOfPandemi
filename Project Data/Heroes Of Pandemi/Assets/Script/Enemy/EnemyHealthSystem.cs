@@ -20,6 +20,7 @@ public class EnemyHealthSystem : MonoBehaviour
     {
         Health = MaxHealth;
         OnEnemyDead = false;
+        
     }
 
     void Start()
@@ -29,7 +30,8 @@ public class EnemyHealthSystem : MonoBehaviour
     }
 
     public void ReduceHealth(int damage)
-    {        
+    {
+        Debug.Log("health -");
         if (Health > 0)
         {
             Health -= damage;
@@ -51,7 +53,8 @@ public class EnemyHealthSystem : MonoBehaviour
     {
         //GetComponent<SpriteRenderer>().color = Color.red;
         PlayingAnim("enemy_getHit");
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
+        PlayingAnim("enemy_walk");
         //GetComponent<SpriteRenderer>().color = Color.white;
     }
 

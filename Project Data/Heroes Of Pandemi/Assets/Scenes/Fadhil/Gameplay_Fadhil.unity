@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b432ffcfe0e6c3488d9d15156d80c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStatus: 4
+  gameStatus: 1
   firstWaveTime: 0
   secondWaveTime: 0
   thirdWaveTime: 0
