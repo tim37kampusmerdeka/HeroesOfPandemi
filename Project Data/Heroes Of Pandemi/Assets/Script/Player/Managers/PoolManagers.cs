@@ -16,5 +16,6 @@ public class PoolManagers : MonoBehaviour
             bullet.transform.parent = this.transform;
             bullet.SetActive(false);
         }
+        
     }
 }

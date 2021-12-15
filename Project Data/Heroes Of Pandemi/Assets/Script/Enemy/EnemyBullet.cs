@@ -7,8 +7,8 @@ public class EnemyBullet : MonoBehaviour
     [Header("Attack Parameters")]
     public float speed;
     public float cooldown;
-    public int damage;        
-    
+    public int damage;
+
     void Update()
     {
         transform.Translate(-transform.right * speed * Time.deltaTime);
