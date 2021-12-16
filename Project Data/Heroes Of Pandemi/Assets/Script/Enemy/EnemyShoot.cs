@@ -22,14 +22,16 @@ public class EnemyShoot : MonoBehaviour
         time += Time.deltaTime;
         if (time > enemyBullet.cooldown)
         {
-            Firing();
+            StartCoroutine(Firing());
             time = 0;
         }
     }
-    void Firing()
+    IEnumerator Firing()
     {
-        PlayingAnim("enemy_shooting",1.5f);
+        PlayingAnim("enemy_shooting", 1f);
         EnemyBullet bullet = Instantiate(enemyBullet, gameObject.transform.position, gameObject.transform.rotation);
+        yield return new WaitForSeconds(0.8f);
+        PlayingAnim("enemy_walk", 1f);
     }
 
     void PlayingAnim(string animName, float timeScale)

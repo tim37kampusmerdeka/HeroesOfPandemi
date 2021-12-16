@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public bool isDelayBetweenWave = false;
     public bool isTimerRunning = true;
 
+    public GameObject PauseMenuScreen;
+
     public ScoreManager scoreManager;
 
     // Initialize Game
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        ForTesting();
+        //ForTesting();
 
         if (isTimerRunning)
         {
@@ -50,10 +52,10 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void ForTesting()
+    /*void ForTesting()
     {
        if(Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    }*/
 
     public void PlayerCondition (bool win)
     {
@@ -65,6 +67,25 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Player Lose");
         }
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+        PauseMenuScreen.SetActive(true);
+    }
+    
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+        PauseMenuScreen.SetActive(false);
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        PauseMenuScreen.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void TimeController()
