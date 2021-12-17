@@ -14,11 +14,6 @@ public class PoolEnemyBullets : MonoBehaviour
 
     public Transform spawnedParent;
 
-    private void Awake()
-    {
-        enemyBulletList = new Queue<GameObject>();
-    }
-
     public void Initialize(GameObject enemyBulletPrefab, int poolSize)
     {
         this.enemyBulletPrefab = enemyBulletPrefab;
@@ -29,7 +24,7 @@ public class PoolEnemyBullets : MonoBehaviour
     {
         SpawnObjectParentIfNeeded();
 
-        GameObject spawnedObject = null;
+        GameObject spawnedObject;
 
         if(enemyBulletList.Count < poolSize)
         {
