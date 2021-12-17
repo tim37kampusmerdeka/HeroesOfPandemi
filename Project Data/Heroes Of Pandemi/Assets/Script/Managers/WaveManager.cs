@@ -22,6 +22,7 @@ public class WaveManager : MonoBehaviour
         timer = timeBetweenWave;
 
         _poolEnemies = GameObject.FindObjectOfType<EnemyFactory>();
+
     }
     void Update()
     {

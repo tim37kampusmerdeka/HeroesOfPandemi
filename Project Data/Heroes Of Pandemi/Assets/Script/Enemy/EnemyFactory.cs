@@ -22,7 +22,7 @@ public class EnemyFactory : MonoBehaviour
 
     // Nurul
     public List<GameObject> listEnemies;
-    
+
     private int EnemyID;
 
     private void Start()
@@ -34,14 +34,14 @@ public class EnemyFactory : MonoBehaviour
     {
         //
         StartCoroutine(spawnDelay());
-        
+
     }
 
     IEnumerator spawnDelay()
     {
         while (isPlaying)
         {
-        yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(spawnInterval);
             ActivateEnemy();
         }
     }
@@ -84,9 +84,9 @@ public class EnemyFactory : MonoBehaviour
         var enemy = spawnObject[EnemyID].GetComponent<EnemyMovement>();
 
         enemy.StartCoroutine(enemy.TurnOffEnemy(pullObject, turnOffDelay));
-        
-        
-        if(EnemyID >= spawnObject.Count - 1)
+
+
+        if (EnemyID >= spawnObject.Count - 1)
         {
             EnemyID = 0;
         }
