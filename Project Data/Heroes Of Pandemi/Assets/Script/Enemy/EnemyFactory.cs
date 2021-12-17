@@ -13,6 +13,8 @@ public class EnemyFactory : MonoBehaviour
     public List<Transform> points;
     //Enemy Spawn Interval
     public bool isPlaying = true;
+    
+    public int maxEnemyCreated = 3;
 
     public float turnOffDelay = 5f;
 
@@ -48,7 +50,7 @@ public class EnemyFactory : MonoBehaviour
 
     void spawnEnemy()
     {
-        // for (int i = 0; i < 30; i++)
+        // for (int i = 0; i < maxEnemyCreated; i++)
         // {
         // //
         // int randomPrefabID = Random.Range(0, prefabs.Count);
@@ -60,12 +62,13 @@ public class EnemyFactory : MonoBehaviour
         // spawnedEnemy.transform.SetParent(pullObject);
         // spawnedEnemy.SetActive(false);
         // }
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < maxEnemyCreated; i++)
         {
             int randomPrefabID = Random.Range(0, prefabs.Count);
             GameObject enemies = Instantiate(prefabs[randomPrefabID]) as GameObject;
             listEnemies.Add(enemies);
             enemies.transform.SetParent(pullObject);
+            enemies.GetComponent<EnemyMovement>().pullObject = pullObject;
             enemies.SetActive(false);
         }
     }
