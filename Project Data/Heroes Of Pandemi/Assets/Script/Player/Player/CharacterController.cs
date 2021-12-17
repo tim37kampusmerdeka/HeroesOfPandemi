@@ -14,7 +14,7 @@ public class CharacterController : MonoBehaviour
     // Try Grid Movement
     public UnityEngine.Transform movePoint;
     public UnityEngine.Transform[] limitArea;
-    bool canMove = true;
+    public bool canMove = true;
     public bool isPlayingAnimation = false;
 
     void Start()
@@ -24,6 +24,7 @@ public class CharacterController : MonoBehaviour
 
         movePoint.parent = null;
         canMove = true;
+        PlayingAnimation("PlayerIdle");
     }
     void Update()
     {
@@ -60,12 +61,10 @@ public class CharacterController : MonoBehaviour
                 PlayingAnimation("PlayerWalking_alternative2");
 
             }
-
             if (Input.GetButtonUp("Horizontal") || Input.GetButtonUp("Vertical"))
             {
                 PlayingAnimation("PlayerIdle");
             }
-            ///
         }
     }
 

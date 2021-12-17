@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DragonBones;
 
 public class PlayerShoot : MonoBehaviour
 {
-    public Transform shootingPos;
+    public UnityEngine.Transform shootingPos;
     float time;
-    Animator animator;
     private PoolManagers _pool;
+    private UnityArmatureComponent animator;
     [SerializeField] WeaponScript weapon;
     void Start()
     {
         _pool = GameObject.FindObjectOfType<PoolManagers>();
-        animator = GetComponent<Animator>();
+        animator = GetComponent<UnityArmatureComponent>();
     }
 
     // Update is called once per frame
@@ -27,13 +28,12 @@ public class PlayerShoot : MonoBehaviour
     void Shooting()
     {
         Vector3 pos = shootingPos.position;
-        //pos.x = pos.x + 1;
-        //pos.y = pos.y - 0.37f;
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L) && !GameManager.Instance.isGameOver)
         {
             for (int i = 0; i < _pool.bulletList.Count; i++)
             {
+                animator.animation.Play(("PlayerShooting_alternative2"), 1);
                 if (_pool.bulletList[i].activeInHierarchy == false)
                 {
                     _pool.bulletList[i].SetActive(true);
