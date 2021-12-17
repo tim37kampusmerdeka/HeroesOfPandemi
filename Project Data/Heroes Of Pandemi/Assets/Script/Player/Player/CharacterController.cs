@@ -23,7 +23,6 @@ public class CharacterController : MonoBehaviour
         animator = GetComponent<UnityArmatureComponent>();
 
         pressJoystick = FindObjectOfType<PressJoystick>();
-
         movePoint.parent = null;
         canMove = true;
         animator.animation.Play(("PlayerIdle"));

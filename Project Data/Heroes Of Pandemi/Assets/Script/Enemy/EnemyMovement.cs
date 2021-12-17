@@ -17,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         PlayingAnim("enemy_walk");
+        anim = GetComponent<UnityArmatureComponent>();
     }
 
     private void OnEnable()
@@ -28,7 +29,7 @@ public class EnemyMovement : MonoBehaviour
     {
         Move();
     }
-    
+
     void Move()
     {
         transform.Translate(-transform.right * speed * Time.deltaTime);
@@ -49,7 +50,7 @@ public class EnemyMovement : MonoBehaviour
     public void OnDead(float delay)
     {
         StopAllCoroutines();
-        StartCoroutine(TurnOffEnemy(pullObject, delay));        
+        StartCoroutine(TurnOffEnemy(pullObject, delay));
     }
 
     void PlayingAnim(string animName)

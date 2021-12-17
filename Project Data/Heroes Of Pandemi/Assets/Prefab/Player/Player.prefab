@@ -660,11 +660,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  joystick: {fileID: 0}
   movePoint: {fileID: 1626076660115186322}
   limitArea:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  canMove: 1
   isPlayingAnimation: 0
 --- !u!114 &1626076658659590478
 MonoBehaviour:
@@ -816,7 +818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626076658907987390}
   m_LocalRotation: {x: 0, y: 0, z: 0.000014842608, w: 1}
-  m_LocalPosition: {x: 1.184492, y: 7.1192846, z: -0.019000001}
+  m_LocalPosition: {x: 1.1845329, y: 7.1291356, z: -0.019000001}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_Children: []
   m_Father: {fileID: 1626076658659590472}
@@ -1302,7 +1304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626076659805665946}
   m_LocalRotation: {x: 0, y: 0, z: 0.000014842608, w: 1}
-  m_LocalPosition: {x: 1.1840917, y: 6.562179, z: -0.008}
+  m_LocalPosition: {x: 1.1841326, y: 6.57203, z: -0.008}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_Children: []
   m_Father: {fileID: 1626076658659590472}
