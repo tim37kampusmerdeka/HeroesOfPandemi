@@ -10,11 +10,16 @@ public class EnemyMovement : MonoBehaviour
 
     public UnityArmatureComponent anim;
 
-    private UnityEngine.Transform pullObject;
+    public UnityEngine.Transform pullObject;
     private float delay;
     //bool moving = true;
 
     void Start()
+    {
+        PlayingAnim("enemy_walk");
+    }
+
+    private void OnEnable()
     {
         PlayingAnim("enemy_walk");
     }
