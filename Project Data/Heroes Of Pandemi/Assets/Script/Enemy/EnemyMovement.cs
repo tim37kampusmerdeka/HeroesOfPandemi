@@ -19,10 +19,10 @@ public class EnemyMovement : MonoBehaviour
         PlayingAnim("enemy_walk");
     }
 
-    private void OnEnable()
-    {
-        PlayingAnim("enemy_walk");
-    }
+    //private void OnEnable()
+    //{
+    //    PlayingAnim("enemy_walk");
+    //}
 
     void Update()
     {
