@@ -9,7 +9,6 @@ public class PlayerHealthSystem : MonoBehaviour
     public GameObject healthbarPrefab;
     public int maxHealth = 100, health;
     public Slider healthSlider;
-    public Text barText;
     CharacterController playerMovement;
     private UnityArmatureComponent animator;
 
@@ -18,7 +17,6 @@ public class PlayerHealthSystem : MonoBehaviour
         // Set Health, text bar dan slider
         health = maxHealth;
         healthSlider.value = health;
-        barText.text = health + "/" + maxHealth;
 
         animator = GetComponent<UnityArmatureComponent>();
         playerMovement = GetComponent<CharacterController>();
@@ -42,20 +40,20 @@ public class PlayerHealthSystem : MonoBehaviour
         {
             health -= amount;
             healthSlider.value = health;
-            barText.text = health + "/" + maxHealth;
 
             if (health <= 0)
             {
                 OnPlayerDead(true);
                 playerMovement.canMove = false;
-            }else
+            }
+            else
             {
                 animator.animation.Stop(("PlayerWalking_alternative2"));
                 animator.animation.Play(("PlayerGethit"), 1);
             }
         }
 
-        
+
     }
     IEnumerator PlayAnimation()
     {
