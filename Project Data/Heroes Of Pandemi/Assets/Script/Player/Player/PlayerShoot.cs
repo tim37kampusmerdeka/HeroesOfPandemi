@@ -19,17 +19,18 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        if (time >= weapon.atkSpeed)
-        {
-            Shooting();
-        }
+        //time += Time.deltaTime;
+        //if (time >= weapon.atkSpeed)
+        //{
+        //    Shooting();
+        //}
     }
-    void Shooting()
+    public void Shooting()
     {
         Vector3 pos = shootingPos.position;
 
-        if (Input.GetKeyDown(KeyCode.L) && !GameManager.Instance.isGameOver)
+        //if (Input.GetKeyDown(KeyCode.L) && !GameManager.Instance.isGameOver)
+        if (!GameManager.Instance.isGameOver)
         {
             for (int i = 0; i < _pool.bulletList.Count; i++)
             {
