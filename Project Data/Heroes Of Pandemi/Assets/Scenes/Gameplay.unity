@@ -1010,11 +1010,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1626076658907987389, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1842904
+      value: 1.18459
       objectReference: {fileID: 0}
     - target: {fileID: 1626076658907987389, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.070782
+      value: 7.1428704
       objectReference: {fileID: 0}
     - target: {fileID: 1626076658907987389, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1122,11 +1122,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1626076659805665945, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1838901
+      value: 1.1841897
       objectReference: {fileID: 0}
     - target: {fileID: 1626076659805665945, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.5136766
+      value: 6.585765
       objectReference: {fileID: 0}
     - target: {fileID: 1626076659805665945, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2834,6 +2834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38dba66fb8d4348878d123e98892f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveSlider: {fileID: 5548512762081689545}
   waves:
   - waveName: First Wave
     totalEnemyWave: 8
@@ -2925,11 +2926,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2346189946297201389, guid: f623cb7bff42986489e12e5b7bcfb4db, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 360
+      value: 429.893
       objectReference: {fileID: 0}
     - target: {fileID: 2346189946297201389, guid: f623cb7bff42986489e12e5b7bcfb4db, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 120
+      value: 143.298
       objectReference: {fileID: 0}
     - target: {fileID: 2346189946297201389, guid: f623cb7bff42986489e12e5b7bcfb4db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2961,11 +2962,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2346189946297201389, guid: f623cb7bff42986489e12e5b7bcfb4db, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -20
+      value: -54.946
       objectReference: {fileID: 0}
     - target: {fileID: 2346189946297201389, guid: f623cb7bff42986489e12e5b7bcfb4db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 50
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2346189946297201389, guid: f623cb7bff42986489e12e5b7bcfb4db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2982,6 +2983,10 @@ PrefabInstance:
     - target: {fileID: 2726985711411610678, guid: f623cb7bff42986489e12e5b7bcfb4db, type: 3}
       propertyPath: m_Name
       value: SliderWave
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207983019774154661, guid: f623cb7bff42986489e12e5b7bcfb4db, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6.6580048
       objectReference: {fileID: 0}
     - target: {fileID: 6147893102239592085, guid: f623cb7bff42986489e12e5b7bcfb4db, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3010,3 +3015,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2346189946297201389, guid: f623cb7bff42986489e12e5b7bcfb4db, type: 3}
   m_PrefabInstance: {fileID: 5548512762081689543}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5548512762081689545 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3496828731652155878, guid: f623cb7bff42986489e12e5b7bcfb4db, type: 3}
+  m_PrefabInstance: {fileID: 5548512762081689543}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
