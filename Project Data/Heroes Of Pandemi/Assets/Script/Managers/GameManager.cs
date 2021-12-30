@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public GameStatus gameStatus;
+
+    public GameObject winHeader, loseHeader, gameOver, nextButton;
+    public Text gameOverScore;
     private static GameManager _instance = null;
     public static GameManager Instance
     {
@@ -20,10 +24,7 @@ public class GameManager : MonoBehaviour
     }
 
     public bool isGameOver = false;
-    public float firstWaveTime, secondWaveTime, thirdWaveTime, delayBetweenWave;
-    public int minSpawnEnemy, maxSpawnEnemy;
     float timer;
-    public bool isDelayBetweenWave = false;
     public bool isTimerRunning = true;
 
     public GameObject PauseMenuScreen;
@@ -38,7 +39,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
+        gameOver.SetActive(false);
+        winHeader.SetActive(false);
+        loseHeader.SetActive(false);
+        nextButton.SetActive(false);
     }
     private void Update()
     {
@@ -52,13 +56,19 @@ public class GameManager : MonoBehaviour
 
     public void PlayerCondition(bool win)
     {
+        gameOverScore.text = "999999";
         if (win)
         {
+            gameOver.SetActive(true);
+            winHeader.SetActive(true);
+            nextButton.SetActive(true);
             Debug.Log("Player Win");
             StartCoroutine(GameEnd());
         }
         else
         {
+            gameOver.SetActive(true);
+            loseHeader.SetActive(true);
             isGameOver = true;
             Debug.Log("Player Lose");
             StartCoroutine(GameEnd());
@@ -83,59 +93,14 @@ public class GameManager : MonoBehaviour
         PauseMenuScreen.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-    // void TimeController()
-    // {
-
-    //     if (timer > 0)
-    //     {
-    //         timer -= Time.deltaTime;
-    //     }
-    //     else
-    //     {
-    //         isTimerRunning = false;
-    //         //Time.timeScale = 0f;
-    //     }
-    //     Debug.Log(timer);
-
-    //     if (Input.GetKeyDown(KeyCode.R))
-    //     {
-    //         Time.timeScale = 1;
-    //         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    //     }
-    // }
-
-    // void CheckingTimer()
-    // {
-    //     if (gameStatus == GameStatus.FirstWave)
-    //     {
-    //         timer = firstWaveTime;
-    //     }
-    //     else if (gameStatus == GameStatus.SecondWave)
-    //     {
-    //         timer = secondWaveTime;
-    //     }
-    //     else if (gameStatus == GameStatus.ThirdWave)
-    //     {
-    //         timer = thirdWaveTime;
-    //     }
-    //     else
-    //     {
-    //         if (gameStatus == GameStatus.Pause)
-    //         {
-    //             Debug.Log("Game is pause");
-    //             Time.timeScale = 0f;
-    //         }
-    //         else
-    //         {
-    //             timer = 0f;
-    //             isDelayBetweenWave = true;
-    //         }
-    //     }
-
-    //     isTimerRunning = true;
-    // }
-
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
     IEnumerator GameEnd()
     {
         yield return new WaitForSeconds(2);
