@@ -17,6 +17,10 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
+<<<<<<< HEAD
         scoreText.text = " " + score;
+=======
+        scoreText.text = score.ToString();
+>>>>>>> 51b31aff13879f9e6f78b862d19ae0608c1af15f
     }
 }
