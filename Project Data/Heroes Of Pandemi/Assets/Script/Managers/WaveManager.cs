@@ -27,6 +27,7 @@ public class WaveManager : MonoBehaviour
         {
             maxEnemy += waves[i].totalEnemyWave;
         }
+
         waveSlider.maxValue = maxEnemy;
         waveSlider.value = 0;
         _poolEnemies = GameObject.FindObjectOfType<EnemyFactory>();

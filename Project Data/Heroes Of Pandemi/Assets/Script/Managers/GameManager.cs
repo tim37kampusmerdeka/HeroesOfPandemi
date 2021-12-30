@@ -18,13 +18,15 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
-    public bool isGameOver = false;
 
-    // public float firstWaveTime, secondWaveTime, thirdWaveTime, delayBetweenWave;
-    // public int minSpawnEnemy, maxSpawnEnemy;
-    // float timer;
-    // public bool isDelayBetweenWave = false;
-    // public bool isTimerRunning = true;
+    public bool isGameOver = false;
+    public float firstWaveTime, secondWaveTime, thirdWaveTime, delayBetweenWave;
+    public int minSpawnEnemy, maxSpawnEnemy;
+    float timer;
+    public bool isDelayBetweenWave = false;
+    public bool isTimerRunning = true;
+
+    public GameObject PauseMenuScreen;
 
     public ScoreManager scoreManager;
 
@@ -36,16 +38,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //CheckingTimer();
+
     }
     private void Update()
     {
         ForTesting();
-
-        // if (isTimerRunning)
-        // {
-        //     TimeController();
-        // }
     }
 
     void ForTesting()
@@ -66,6 +63,25 @@ public class GameManager : MonoBehaviour
             Debug.Log("Player Lose");
             StartCoroutine(GameEnd());
         }
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+        PauseMenuScreen.SetActive(true);
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+        PauseMenuScreen.SetActive(false);
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        PauseMenuScreen.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     // void TimeController()
@@ -119,13 +135,14 @@ public class GameManager : MonoBehaviour
 
     //     isTimerRunning = true;
     // }
+
     IEnumerator GameEnd()
     {
         yield return new WaitForSeconds(2);
         Time.timeScale = 0;
     }
-}
 
+}
 
 public enum GameStatus
 {

@@ -30,7 +30,7 @@ public class PlayerHealthSystem : MonoBehaviour
             //this.gameObject.SetActive(false);
             animator.animation.Play(("PlayerDead"), 1);
             StartCoroutine(PlayAnimation());
-            healthbarPrefab.SetActive(false);
+            //healthbarPrefab.SetActive(false);
             GameManager.Instance.PlayerCondition(false);
         }
     }

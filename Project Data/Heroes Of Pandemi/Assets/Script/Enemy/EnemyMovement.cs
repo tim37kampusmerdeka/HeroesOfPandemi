@@ -20,10 +20,10 @@ public class EnemyMovement : MonoBehaviour
         anim = GetComponent<UnityArmatureComponent>();
     }
 
-    private void OnEnable()
-    {
-        PlayingAnim("enemy_walk");
-    }
+    //private void OnEnable()
+    //{
+    //    PlayingAnim("enemy_walk");
+    //}
 
     void Update()
     {

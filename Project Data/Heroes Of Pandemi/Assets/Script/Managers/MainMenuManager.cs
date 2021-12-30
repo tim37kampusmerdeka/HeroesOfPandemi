@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public string sceneName;
     public void Level1()
     {
-        SceneManager.LoadScene("Gameplay-Nurul");
+        SceneManager.LoadScene(sceneName);
     }
     public void ExitButton()
     {
