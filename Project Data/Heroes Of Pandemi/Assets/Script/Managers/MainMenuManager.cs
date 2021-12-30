@@ -8,7 +8,8 @@ public class MainMenuManager : MonoBehaviour
     public string sceneName;
     public void Level1()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("Loading");
+        // SceneManager.LoadScene(sceneName);
     }
     public void ExitButton()
     {
