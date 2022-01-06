@@ -416,6 +416,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStatus: 1
   isGameOver: 0
+  firstWaveTime: 0
+  secondWaveTime: 0
+  thirdWaveTime: 0
+  delayBetweenWave: 0
+  minSpawnEnemy: 0
+  maxSpawnEnemy: 0
+  isDelayBetweenWave: 0
+  isTimerRunning: 1
+  PauseMenuScreen: {fileID: 0}
   scoreManager: {fileID: 1986174588}
 --- !u!4 &163501999
 Transform:
@@ -443,6 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd38dba66fb8d4348878d123e98892f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveSlider: {fileID: 0}
   waves:
   - waveName: First Wave
     totalEnemyWave: 1
@@ -921,11 +931,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1626076658907987389, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.18459
+      value: 1.1845174
       objectReference: {fileID: 0}
     - target: {fileID: 1626076658907987389, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.1428704
+      value: 7.1254106
       objectReference: {fileID: 0}
     - target: {fileID: 1626076658907987389, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1033,11 +1043,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1626076659805665945, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1841897
+      value: 1.1841171
       objectReference: {fileID: 0}
     - target: {fileID: 1626076659805665945, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.585765
+      value: 6.568305
       objectReference: {fileID: 0}
     - target: {fileID: 1626076659805665945, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalRotation.w
