@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
 {
+    public Slider waveSlider;
     public Wave[] waves;
     public Transform[] enemySpawnPoints;
     public float timeBetweenWave;
     private float timer;
 
+    private int maxEnemy = 0;
     private Wave currentWave;
     private int currentWaveIndex;
     private bool canSpawnEnemy = true;
@@ -20,7 +23,13 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         timer = timeBetweenWave;
+        for (int i = 0; i < waves.Length; i++)
+        {
+            maxEnemy += waves[i].totalEnemyWave;
+        }
 
+        waveSlider.maxValue = maxEnemy;
+        waveSlider.value = 0;
         _poolEnemies = GameObject.FindObjectOfType<EnemyFactory>();
 
     }
@@ -46,6 +55,9 @@ public class WaveManager : MonoBehaviour
                     _poolEnemies.listEnemies[i].transform.position = randomPoint.position;
                     _poolEnemies.listEnemies[i].transform.rotation = Quaternion.identity;
                     currentWave.totalEnemyWave--;
+
+                    waveSlider.value++;
+
                     break;
                 }
             }
