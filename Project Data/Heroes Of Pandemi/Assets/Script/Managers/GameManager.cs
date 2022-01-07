@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     // public bool isTimerRunning = true;
 
     public ScoreManager scoreManager;
+    public WaveManager waveManager;
+    public GameObject tutorialMenu;
 
     // Initialize Game
     void InitGame()
@@ -123,6 +125,12 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         Time.timeScale = 0;
+    }
+
+    public void StartGame()
+    {
+        tutorialMenu.SetActive(false);
+        waveManager.gameRunning = true;
     }
 }
 
