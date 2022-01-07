@@ -593,22 +593,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7725555004838413233, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725555004838413233, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7725555004838413233, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2072635245}
+      objectReference: {fileID: 2072635243}
+    - target: {fileID: 7725555004838413233, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2072635241}
     - target: {fileID: 7725555004838413233, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7725555004838413233, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725555004838413233, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenScene
+      value: BackToMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725555004838413233, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7725555004838413233, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725555004838413233, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: MainMenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7725555004838413233, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
@@ -616,8 +636,16 @@ PrefabInstance:
       value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 7725555004838413233, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725555004838413233, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725555004838413233, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7725555004882081088, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
       propertyPath: m_Pivot.x
@@ -3506,14 +3534,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStatus: 1
+  winHeader: {fileID: 0}
+  loseHeader: {fileID: 0}
+  gameOver: {fileID: 0}
+  nextButton: {fileID: 0}
+  gameOverScore: {fileID: 0}
   isGameOver: 0
-  firstWaveTime: 0
-  secondWaveTime: 0
-  thirdWaveTime: 0
-  delayBetweenWave: 0
-  minSpawnEnemy: 0
-  maxSpawnEnemy: 0
-  isDelayBetweenWave: 0
   isTimerRunning: 1
   pauseMenuScreen: {fileID: 490175910}
   gameOverMenuScreen: {fileID: 1050960730}

@@ -9,7 +9,7 @@ public class MainMenuManager : MonoBehaviour
     public void Level1()
     {
         SceneManager.LoadScene("Loading");
-        // SceneManager.LoadScene(sceneName);
+        PlayerPrefs.SetString("sceneName", "Gameplay");
     }
     public void ExitButton()
     {
