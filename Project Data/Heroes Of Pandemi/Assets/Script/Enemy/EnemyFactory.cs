@@ -35,7 +35,7 @@ public class EnemyFactory : MonoBehaviour
     public void startSpawning()
     {
         //
-        StartCoroutine(spawnDelay());
+        //StartCoroutine(spawnDelay());
 
     }
 

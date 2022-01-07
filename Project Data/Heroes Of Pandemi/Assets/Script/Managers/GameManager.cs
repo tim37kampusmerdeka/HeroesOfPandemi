@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
     float timer;
     public bool isTimerRunning = true;
 
-    public GameObject PauseMenuScreen;
+    public GameObject pauseMenuScreen;
+    public GameObject gameOverMenuScreen;
 
     public ScoreManager scoreManager;
 
@@ -63,7 +64,8 @@ public class GameManager : MonoBehaviour
             winHeader.SetActive(true);
             nextButton.SetActive(true);
             Debug.Log("Player Win");
-            StartCoroutine(GameEnd());
+            gameOverMenuScreen.SetActive(true);
+            //StartCoroutine(GameEnd());
         }
         else
         {
@@ -71,26 +73,27 @@ public class GameManager : MonoBehaviour
             loseHeader.SetActive(true);
             isGameOver = true;
             Debug.Log("Player Lose");
-            StartCoroutine(GameEnd());
+            gameOverMenuScreen.SetActive(true);
+            //StartCoroutine(GameEnd());
         }
     }
 
     public void Pause()
     {
+        pauseMenuScreen.SetActive(true);
         Time.timeScale = 0f;
-        PauseMenuScreen.SetActive(true);
     }
 
     public void Resume()
     {
         Time.timeScale = 1f;
-        PauseMenuScreen.SetActive(false);
+        pauseMenuScreen.SetActive(false);
     }
 
     public void Restart()
     {
         Time.timeScale = 1f;
-        PauseMenuScreen.SetActive(false);
+        pauseMenuScreen.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void BackToMenu()

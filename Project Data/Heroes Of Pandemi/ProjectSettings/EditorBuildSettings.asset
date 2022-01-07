@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Nurul/Loading.unity
     guid: ab1c8c9b694e6ac4ab3eb77530b785d0
   - enabled: 1
+    path: Assets/Scenes/Collection.unity
+    guid: b624db8514baec8418f719aa00f7c54c
+  - enabled: 0
     path: Assets/Scenes/Nurul/Gameplay-Nurul.unity
     guid: 09a99f2e83dfc6e44bf27e60bb55383e
   - enabled: 1
