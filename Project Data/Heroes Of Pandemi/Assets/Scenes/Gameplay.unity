@@ -686,11 +686,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7725555004882081088, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
   m_PrefabInstance: {fileID: 351619716}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &351619718 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7725555004838413247, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
-  m_PrefabInstance: {fileID: 351619716}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &417864268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,11 +1080,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1626076658907987389, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1843593
+      value: 1.18459
       objectReference: {fileID: 0}
     - target: {fileID: 1626076658907987389, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.087364
+      value: 7.1428704
       objectReference: {fileID: 0}
     - target: {fileID: 1626076658907987389, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1197,11 +1192,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1626076659805665945, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.183959
+      value: 1.1841897
       objectReference: {fileID: 0}
     - target: {fileID: 1626076659805665945, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.5302587
+      value: 6.585765
       objectReference: {fileID: 0}
     - target: {fileID: 1626076659805665945, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1895,6 +1890,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1088119203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7725555004882081089, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
+  m_PrefabInstance: {fileID: 351619716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1137165676
 GameObject:
   m_ObjectHideFlags: 0
@@ -3169,7 +3169,7 @@ MonoBehaviour:
   maxSpawnEnemy: 0
   isDelayBetweenWave: 0
   isTimerRunning: 1
-  PauseMenuScreen: {fileID: 351619718}
+  PauseMenuScreen: {fileID: 1088119203}
   scoreManager: {fileID: 1986174588}
 --- !u!4 &2072635244
 Transform:
