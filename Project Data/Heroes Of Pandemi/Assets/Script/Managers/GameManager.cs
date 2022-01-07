@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour
     public bool isDelayBetweenWave = false;
     public bool isTimerRunning = true;
 
-    public GameObject PauseMenuScreen;
+    public GameObject pauseMenuScreen;
+    public GameObject gameOverMenuScreen;
 
     public ScoreManager scoreManager;
 
@@ -55,32 +56,34 @@ public class GameManager : MonoBehaviour
         if (win)
         {
             Debug.Log("Player Win");
-            StartCoroutine(GameEnd());
+            gameOverMenuScreen.SetActive(true);
+            //StartCoroutine(GameEnd());
         }
         else
         {
             isGameOver = true;
             Debug.Log("Player Lose");
-            StartCoroutine(GameEnd());
+            gameOverMenuScreen.SetActive(true);
+            //StartCoroutine(GameEnd());
         }
     }
 
     public void Pause()
     {
-        PauseMenuScreen.SetActive(true);
+        pauseMenuScreen.SetActive(true);
         Time.timeScale = 0f;
     }
 
     public void Resume()
     {
         Time.timeScale = 1f;
-        PauseMenuScreen.SetActive(false);
+        pauseMenuScreen.SetActive(false);
     }
 
     public void Restart()
     {
         Time.timeScale = 1f;
-        PauseMenuScreen.SetActive(false);
+        pauseMenuScreen.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
