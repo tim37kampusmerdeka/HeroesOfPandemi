@@ -28,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
     {
         Move();
     }
-    
+
     void Move()
     {
         transform.Translate(-transform.right * speed * Time.deltaTime);
@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
     {
         this.pullObject = pullObject;
         this.delay = delay;
-        anim.animation.Play(("enemy_idle"));
+        anim.animation.Play("enemy_idle");
 
         yield return new WaitForSeconds(delay);
         gameObject.transform.SetParent(pullObject);
@@ -49,7 +49,7 @@ public class EnemyMovement : MonoBehaviour
     public void OnDead(float delay)
     {
         StopAllCoroutines();
-        StartCoroutine(TurnOffEnemy(pullObject, delay));        
+        StartCoroutine(TurnOffEnemy(pullObject, delay));
     }
 
     void PlayingAnim(string animName)

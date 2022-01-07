@@ -13,7 +13,7 @@ public class EnemyFactory : MonoBehaviour
     public List<Transform> points;
     //Enemy Spawn Interval
     public bool isPlaying = true;
-    
+
     public int maxEnemyCreated = 3;
 
     public float turnOffDelay = 5f;
