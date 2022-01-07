@@ -17,7 +17,6 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         PlayingAnim("enemy_walk");
-        anim = GetComponent<UnityArmatureComponent>();
     }
 
     //private void OnEnable()
@@ -39,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
     {
         this.pullObject = pullObject;
         this.delay = delay;
-        anim.animation.Play(("enemy_idle"));
+        anim.animation.Play("enemy_idle");
 
         yield return new WaitForSeconds(delay);
         gameObject.transform.SetParent(pullObject);
