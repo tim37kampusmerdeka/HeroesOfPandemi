@@ -35,7 +35,7 @@ public class EnemyFactory : MonoBehaviour
     public void startSpawning()
     {
         //
-        StartCoroutine(spawnDelay());
+        //StartCoroutine(spawnDelay());
 
     }
 
@@ -65,7 +65,7 @@ public class EnemyFactory : MonoBehaviour
         for (int i = 0; i < maxEnemyCreated; i++)
         {
             int randomPrefabID = Random.Range(0, prefabs.Count);
-            GameObject enemies = Instantiate(prefabs[randomPrefabID]) as GameObject;
+            GameObject enemies = Instantiate(prefabs[randomPrefabID]);
             listEnemies.Add(enemies);
             enemies.transform.SetParent(pullObject);
             enemies.GetComponent<EnemyMovement>().pullObject = pullObject;
