@@ -7,6 +7,7 @@ public class GameOverMenu : MonoBehaviour
 {
     private ScoreManager scoreManager;
     public WaveManager waveManager;
+
     private int score = 0;
     private int maxScore = 0;
     public Text scoreDisplay;
