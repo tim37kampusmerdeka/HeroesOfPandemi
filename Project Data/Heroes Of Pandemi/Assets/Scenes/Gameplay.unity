@@ -860,7 +860,7 @@ RectTransform:
   m_Children:
   - {fileID: 351619717}
   m_Father: {fileID: 1335311275}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1867,7 +1867,7 @@ RectTransform:
   m_Children:
   - {fileID: 852664835}
   m_Father: {fileID: 1335311275}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -2479,9 +2479,9 @@ RectTransform:
   - {fileID: 1554531911}
   - {fileID: 1704347018}
   - {fileID: 1539527726}
-  - {fileID: 490175911}
   - {fileID: 893000211}
   - {fileID: 5548512762081689544}
+  - {fileID: 490175911}
   - {fileID: 1050960731}
   - {fileID: 4531050651396871949}
   m_Father: {fileID: 0}
@@ -3529,6 +3529,7 @@ MonoBehaviour:
   - {fileID: 739630881}
   - {fileID: 1871554794}
   timeBetweenWave: 8
+  gameRunning: 0
 --- !u!114 &2072635243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3548,6 +3549,8 @@ MonoBehaviour:
   pauseMenuScreen: {fileID: 490175910}
   gameOverMenuScreen: {fileID: 1050960730}
   scoreManager: {fileID: 1986174588}
+  waveManager: {fileID: 2072635242}
+  tutorialMenu: {fileID: 4531050651396871946}
 --- !u!4 &2072635244
 Transform:
   m_ObjectHideFlags: 0
@@ -3977,7 +3980,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4531050651925984412}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2072635243}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &4531050651925984415
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4003,7 +4018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2346189946297201389, guid: f623cb7bff42986489e12e5b7bcfb4db, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2346189946297201389, guid: f623cb7bff42986489e12e5b7bcfb4db, type: 3}
       propertyPath: m_AnchorMax.x
