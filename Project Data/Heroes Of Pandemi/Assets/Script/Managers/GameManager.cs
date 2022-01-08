@@ -20,8 +20,7 @@ public class GameManager : MonoBehaviour
     }
 
     public bool isGameOver = false;
-    public float firstWaveTime, secondWaveTime, thirdWaveTime, delayBetweenWave;
-    public int minSpawnEnemy, maxSpawnEnemy;
+    
     float timer;
     public bool isDelayBetweenWave = false;
     public bool isTimerRunning = true;
@@ -57,14 +56,12 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Player Win");
             gameOverMenuScreen.SetActive(true);
-            //StartCoroutine(GameEnd());
         }
         else
         {
             isGameOver = true;
             Debug.Log("Player Lose");
             gameOverMenuScreen.SetActive(true);
-            //StartCoroutine(GameEnd());
         }
     }
 
@@ -86,58 +83,11 @@ public class GameManager : MonoBehaviour
         pauseMenuScreen.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-    // void TimeController()
-    // {
-
-    //     if (timer > 0)
-    //     {
-    //         timer -= Time.deltaTime;
-    //     }
-    //     else
-    //     {
-    //         isTimerRunning = false;
-    //         //Time.timeScale = 0f;
-    //     }
-    //     Debug.Log(timer);
-
-    //     if (Input.GetKeyDown(KeyCode.R))
-    //     {
-    //         Time.timeScale = 1;
-    //         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    //     }
-    // }
-
-    // void CheckingTimer()
-    // {
-    //     if (gameStatus == GameStatus.FirstWave)
-    //     {
-    //         timer = firstWaveTime;
-    //     }
-    //     else if (gameStatus == GameStatus.SecondWave)
-    //     {
-    //         timer = secondWaveTime;
-    //     }
-    //     else if (gameStatus == GameStatus.ThirdWave)
-    //     {
-    //         timer = thirdWaveTime;
-    //     }
-    //     else
-    //     {
-    //         if (gameStatus == GameStatus.Pause)
-    //         {
-    //             Debug.Log("Game is pause");
-    //             Time.timeScale = 0f;
-    //         }
-    //         else
-    //         {
-    //             timer = 0f;
-    //             isDelayBetweenWave = true;
-    //         }
-    //     }
-
-    //     isTimerRunning = true;
-    // }
+    public void BackToMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
+    }
 
     IEnumerator GameEnd()
     {
