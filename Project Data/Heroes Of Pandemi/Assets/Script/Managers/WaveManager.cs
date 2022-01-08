@@ -17,10 +17,12 @@ public class WaveManager : MonoBehaviour
     private bool canSpawnEnemy = true;
     private float rateSpawnEnemy;
 
+    public bool gameRunning = false;
+
     // Ubah dari script enemy factory di baris 63
     private EnemyFactory _poolEnemies;
 
-    private void Start()
+    public void Initialize()
     {
         timer = timeBetweenWave;
         for (int i = 0; i < waves.Length; i++)
@@ -35,9 +37,12 @@ public class WaveManager : MonoBehaviour
     }
     void Update()
     {
-        currentWave = waves[currentWaveIndex];
-        SpawnWave();
-        NextWave();
+        if (gameRunning == true)
+        {
+            currentWave = waves[currentWaveIndex];
+            SpawnWave();
+            NextWave();
+        }
     }
 
     void SpawnWave()
