@@ -571,6 +571,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 490175911}
     m_Modifications:
+    - target: {fileID: 7725555003976877545, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
+      propertyPath: m_Text
+      value: CONTINUE
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725555003995028034, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
+      propertyPath: m_Text
+      value: MAIN MENU
+      objectReference: {fileID: 0}
     - target: {fileID: 7725555004332394626, guid: dcf75cf817324af4cb7ab62e3fb528e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3534,12 +3542,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStatus: 1
-  winHeader: {fileID: 0}
-  loseHeader: {fileID: 0}
-  gameOver: {fileID: 0}
-  nextButton: {fileID: 0}
-  gameOverScore: {fileID: 0}
   isGameOver: 0
+  isDelayBetweenWave: 0
   isTimerRunning: 1
   pauseMenuScreen: {fileID: 490175910}
   gameOverMenuScreen: {fileID: 1050960730}
