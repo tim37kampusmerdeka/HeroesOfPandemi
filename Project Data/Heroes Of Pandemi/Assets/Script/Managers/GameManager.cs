@@ -83,6 +83,11 @@ public class GameManager : MonoBehaviour
         pauseMenuScreen.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void BackToMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
+    }
 
     IEnumerator GameEnd()
     {
