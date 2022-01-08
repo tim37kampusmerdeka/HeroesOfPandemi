@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         tutorialMenu.SetActive(false);
+        waveManager.Initialize();
         waveManager.gameRunning = true;
     }
 
