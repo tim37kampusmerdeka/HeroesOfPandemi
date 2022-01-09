@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public ScoreManager scoreManager;
     public WaveManager waveManager;
     public GameObject tutorialMenu;
+    public GameObject pauseMenuScreen;
 
     // Initialize Game
     void InitGame()
@@ -131,6 +132,25 @@ public class GameManager : MonoBehaviour
     {
         tutorialMenu.SetActive(false);
         waveManager.gameRunning = true;
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+        pauseMenuScreen.SetActive(true);
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+        pauseMenuScreen.SetActive(false);
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        pauseMenuScreen.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 
