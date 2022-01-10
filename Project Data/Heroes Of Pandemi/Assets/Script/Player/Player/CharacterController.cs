@@ -15,7 +15,7 @@ public class CharacterController : MonoBehaviour
     // Try Grid Movement
     public UnityEngine.Transform movePoint;
     public UnityEngine.Transform[] limitArea;
-    public bool canMove = true;
+    public bool canMove;
     public bool isPlayingAnimation = false;
 
     void Start()
@@ -33,13 +33,29 @@ public class CharacterController : MonoBehaviour
     }
     void GridMovement()
     {
+        var horizontal = joystick.Horizontal;
+        var vertical = joystick.Vertical;
+        if (!pressJoystick.press)
+        {
+            // PlayingAnimation("PlayerIdle");
+            canMove = false;
+        }
+        if (pressJoystick.press)
+        {
+            canMove = true;
+        }
         if (canMove)
         {
-            var horizontal = joystick.Horizontal;
-            var vertical = joystick.Vertical;
-
+            Debug.Log(horizontal + " -- " + vertical);
             gameObject.transform.position += new Vector3(horizontal, vertical, 0) * speed * Time.deltaTime;
+            // animator.animation.Play(("PlayerWalking_alternative2"), 0);
             //gameObject.transform.position += new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0) * speed * Time.deltaTime;
         }
+
+    }
+    void PlayingAnimation(string animationName)
+    {
+        //animator.animation.Play((animationName));
+        animator.animation.FadeIn(animationName, 0.25f, 0);
     }
 }

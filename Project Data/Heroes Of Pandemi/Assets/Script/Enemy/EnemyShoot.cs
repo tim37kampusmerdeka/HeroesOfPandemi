@@ -13,14 +13,14 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField] EnemyBullet enemyBullet;
 
     void Start()
-    {        
+    {
         pool = GameObject.FindObjectOfType<PoolEnemyBullets>();
     }
 
     void Update()
     {
         time += Time.deltaTime;
-        if (time > enemyBullet.cooldown)
+        if (time > enemyBullet.cooldown && !GameManager.Instance.isGameOver)
         {
             Firing();
             time = 0;
@@ -28,7 +28,7 @@ public class EnemyShoot : MonoBehaviour
     }
     void Firing()
     {
-        PlayingAnim("enemy_shooting",1.5f);
+        PlayingAnim("enemy_shooting", 1.5f);
         EnemyBullet bullet = Instantiate(enemyBullet, gameObject.transform.position, gameObject.transform.rotation);
     }
 

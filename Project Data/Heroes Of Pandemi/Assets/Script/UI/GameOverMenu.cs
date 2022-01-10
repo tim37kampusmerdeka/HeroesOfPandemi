@@ -38,9 +38,9 @@ public class GameOverMenu : MonoBehaviour
     {
         while (score < scoreManager.score)
         {
-            score+=10;
+            score += 10;
             scoreDisplay.text = score.ToString();
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.010f);
         }
 
         StartCoroutine(ShowingStars(score));
@@ -56,7 +56,7 @@ public class GameOverMenu : MonoBehaviour
         {
             starsOpen = 1;
         }
-        else if(scorePersentage > 40f && scorePersentage < 75f)
+        else if (scorePersentage > 40f && scorePersentage < 75f)
         {
             starsOpen = 2;
         }

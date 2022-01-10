@@ -15,11 +15,13 @@ public class PressJoystick : MonoBehaviour, IPointerUpHandler, IPointerDownHandl
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        PlayingAnimation("PlayerWalking_alternative2");
+        // PlayingAnimation("PlayerWalking_alternative2");
+        press = true;
     }
     public void OnPointerUp(PointerEventData eventData)
     {
-        PlayingAnimation("PlayerIdle");
+        // PlayingAnimation("PlayerIdle");
+        press = false;
     }
 
     void PlayingAnimation(string animationName)

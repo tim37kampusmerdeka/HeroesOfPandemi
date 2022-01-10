@@ -20,7 +20,7 @@ public class EnemyHealthSystem : MonoBehaviour
     {
         Health = MaxHealth;
         OnEnemyDead = false;
-        
+
     }
 
     void Start()
@@ -31,8 +31,7 @@ public class EnemyHealthSystem : MonoBehaviour
 
     public void ReduceHealth(int damage)
     {
-        Debug.Log("health -");
-        if (Health > 0)
+        if (Health >= 0)
         {
             Health -= damage;
             StartCoroutine(Hit());
@@ -41,8 +40,8 @@ public class EnemyHealthSystem : MonoBehaviour
         {
             if (!OnEnemyDead)
             {
-                OnDead();
                 PlayingAnim("enemy_dead");
+                OnDead();
                 OnEnemyDead = true;
                 GameManager.Instance.scoreManager.score += scoreValue;
             }
@@ -52,19 +51,19 @@ public class EnemyHealthSystem : MonoBehaviour
     IEnumerator Hit()
     {
         //GetComponent<SpriteRenderer>().color = Color.red;
-        PlayingAnim("enemy_getHit");
-        yield return new WaitForSeconds(0.5f);
+        anim.animation.Play(("enemy_getHit"), 1);
+        yield return new WaitForSeconds(0.25f);
         PlayingAnim("enemy_walk");
         //GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     void OnDead()
-    {       
-        enemyMovement.OnDead(1.25f);
+    {
+        enemyMovement.OnDead(0.25f);
     }
 
     void PlayingAnim(string animName)
     {
-        anim.animation.Play(animName);
+        anim.animation.FadeIn(animName, 0.2f, 0);
     }
 }

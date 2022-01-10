@@ -19,14 +19,17 @@ public class EnemyMovement : MonoBehaviour
         PlayingAnim("enemy_walk");
     }
 
-    //private void OnEnable()
-    //{
-    //    PlayingAnim("enemy_walk");
-    //}
+    private void OnEnable()
+    {
+        PlayingAnim("enemy_walk");
+    }
 
     void Update()
     {
-        Move();
+        if (!GameManager.Instance.isGameOver)
+        {
+            Move();
+        }
     }
 
     void Move()
@@ -38,7 +41,7 @@ public class EnemyMovement : MonoBehaviour
     {
         this.pullObject = pullObject;
         this.delay = delay;
-        anim.animation.Play("enemy_idle");
+        PlayingAnim("enemy_dead");
 
         yield return new WaitForSeconds(delay);
         gameObject.transform.SetParent(pullObject);
