@@ -44,6 +44,17 @@ public class CharacterController : MonoBehaviour
         {
             canMove = true;
         }
+
+        // if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+        // {
+        //     animator.animation.FadeIn("PlayerWalking_alternative2", 0.2f, 0);
+        // }
+        // else
+        // {
+        //     animator.animation.FadeIn("PlayerIdle", 0.2f, 0);
+        // }
+
+        
         if (canMove)
         {
             Debug.Log(horizontal + " -- " + vertical);
