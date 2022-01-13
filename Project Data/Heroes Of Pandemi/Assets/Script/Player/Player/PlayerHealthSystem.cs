@@ -20,20 +20,19 @@ public class PlayerHealthSystem : MonoBehaviour
 
         animator = GetComponent<UnityArmatureComponent>();
         playerMovement = GetComponent<CharacterController>();
-        //Invoke void trydamage
-        //InvokeRepeating("TryDamage", 5, 0.1f);
+        
     }
+
     void OnPlayerDead(bool dead = false)
     {
         if (dead)
         {
-            //this.gameObject.SetActive(false);
             animator.animation.Play(("PlayerDead"), 1);
             StartCoroutine(PlayAnimation());
-            //healthbarPrefab.SetActive(false);
             GameManager.Instance.PlayerCondition(false);
         }
     }
+
     public void TakeDamage(int amount)
     {
         if (playerMovement.canMove)
@@ -48,8 +47,7 @@ public class PlayerHealthSystem : MonoBehaviour
             }
             else
             {
-                animator.animation.Stop(("PlayerWalking_alternative2"));
-                animator.animation.Play(("PlayerGethit"), 1);
+                StartCoroutine(PlayerGetHit());
             }
         }
 
@@ -59,5 +57,23 @@ public class PlayerHealthSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
+    }
+
+    IEnumerator PlayerGetHit()
+    {
+        animator.animation.Play("PlayerGethit", 1);
+
+        var horizontal = playerMovement.joystick.Horizontal;
+        var vertical = playerMovement.joystick.Vertical;
+
+        yield return new WaitForSeconds(0.2f);
+        if (horizontal == 0 && vertical == 0)
+        {
+            animator.animation.Play("PlayerIdle");
+        }
+        else
+        {
+            animator.animation.Play("PlayerWalking_alternative2");
+        }
     }
 }

@@ -5,36 +5,29 @@ using DragonBones;
 
 public class PlayerShoot : MonoBehaviour
 {
+    public CharacterController playerMovement;
     public UnityEngine.Transform shootingPos;
     float time;
     private PoolManagers _pool;
     private UnityArmatureComponent animator;
     [SerializeField] WeaponScript weapon;
+
     void Start()
     {
         _pool = GameObject.FindObjectOfType<PoolManagers>();
         animator = GetComponent<UnityArmatureComponent>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //time += Time.deltaTime;
-        //if (time >= weapon.atkSpeed)
-        //{
-        //    Shooting();
-        //}
-    }
+    
     public void Shooting()
     {
         Vector3 pos = shootingPos.position;
 
-        //if (Input.GetKeyDown(KeyCode.L) && !GameManager.Instance.isGameOver)
         if (!GameManager.Instance.isGameOver)
         {
             for (int i = 0; i < _pool.bulletList.Count; i++)
             {
-                animator.animation.Play(("PlayerShooting_alternative2"), 1);
+               
                 if (_pool.bulletList[i].activeInHierarchy == false)
                 {
                     _pool.bulletList[i].SetActive(true);
@@ -43,8 +36,27 @@ public class PlayerShoot : MonoBehaviour
                     break;
                 }
             }
+
+            StartCoroutine(PlayShootingAnimation());
             time = 0;
-            //Debug.Log("Shoot");
+        }
+    }
+
+    IEnumerator PlayShootingAnimation()
+    {
+        animator.animation.Play(("PlayerShooting_alternative2"), 1);
+
+        var horizontal = playerMovement.joystick.Horizontal;
+        var vertical = playerMovement.joystick.Vertical;
+
+        yield return new WaitForSeconds(0.2f);
+        if (horizontal == 0 && vertical == 0)
+        {
+            animator.animation.Play("PlayerIdle");
+        }
+        else
+        {
+            animator.animation.Play("PlayerWalking_alternative2");
         }
     }
 }
