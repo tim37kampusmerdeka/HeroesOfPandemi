@@ -14,8 +14,6 @@ public class EnemyHealthSystem : MonoBehaviour
 
     public UnityArmatureComponent anim;
 
-    //bool isPlayingAnim = false;
-
     void OnEnable()
     {
         Health = MaxHealth;
@@ -49,13 +47,21 @@ public class EnemyHealthSystem : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Wall")
+        {
+            OnDead();
+            PlayingAnim("enemy_dead");
+            OnEnemyDead = true;
+        }
+    }
+
     IEnumerator Hit()
     {
-        //GetComponent<SpriteRenderer>().color = Color.red;
         PlayingAnim("enemy_getHit");
         yield return new WaitForSeconds(0.5f);
         PlayingAnim("enemy_walk");
-        //GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     void OnDead()

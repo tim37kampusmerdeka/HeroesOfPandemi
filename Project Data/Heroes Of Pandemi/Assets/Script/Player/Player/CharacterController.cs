@@ -16,7 +16,8 @@ public class CharacterController : MonoBehaviour
     public UnityEngine.Transform movePoint;
     public UnityEngine.Transform[] limitArea;
     public bool canMove = true;
-    public bool isPlayingAnimation = false;
+    private bool isIdle = true;
+
 
     void Start()
     {
@@ -27,10 +28,12 @@ public class CharacterController : MonoBehaviour
         canMove = true;
         animator.animation.Play(("PlayerIdle"));
     }
+
     void Update()
     {
         GridMovement();
     }
+
     void GridMovement()
     {
         if (canMove)
@@ -39,7 +42,30 @@ public class CharacterController : MonoBehaviour
             var vertical = joystick.Vertical;
 
             gameObject.transform.position += new Vector3(horizontal, vertical, 0) * speed * Time.deltaTime;
-            //gameObject.transform.position += new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0) * speed * Time.deltaTime;
+            
+            if(vertical == 0 && horizontal == 0)
+            {
+                if (isIdle == false)
+                {
+                    isIdle = true;
+                    PlayingAnimation("PlayerIdle");
+                }
+            }
+            else
+            {
+                if (isIdle == true)
+                {
+                    isIdle = false;
+                    PlayingAnimation("PlayerWalking_alternative2");
+                }
+            }
+        
         }
+    }
+
+    void PlayingAnimation(string animationName)
+    {
+        //animator.animation.Play((animationName));
+        animator.animation.FadeIn(animationName, 0.25f, 0);
     }
 }
