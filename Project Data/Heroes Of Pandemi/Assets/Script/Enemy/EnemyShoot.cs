@@ -20,7 +20,7 @@ public class EnemyShoot : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time > enemyBullet.cooldown)
+        if (time > enemyBullet.cooldown && !GameManager.Instance.isGameOver)
         {
             Firing();
             time = 0;

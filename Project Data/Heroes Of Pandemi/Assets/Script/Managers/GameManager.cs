@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     public WaveManager waveManager;
     public GameObject tutorialMenu;
+    public GameObject winHeader, loseHeader;
 
     // Initialize Game
     void InitGame()
@@ -41,7 +42,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
+        winHeader.SetActive(false);
+        loseHeader.SetActive(false);
     }
     private void Update()
     {
@@ -55,14 +57,16 @@ public class GameManager : MonoBehaviour
 
     public void PlayerCondition(bool win)
     {
+        isGameOver = true;
         if (win)
         {
             Debug.Log("Player Win");
+            winHeader.SetActive(true);
             gameOverMenuScreen.SetActive(true);
         }
         else
         {
-            isGameOver = true;
+            loseHeader.SetActive(true);
             Debug.Log("Player Lose");
             gameOverMenuScreen.SetActive(true);
         }
