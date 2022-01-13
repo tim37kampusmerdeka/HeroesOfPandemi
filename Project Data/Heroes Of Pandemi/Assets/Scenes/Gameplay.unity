@@ -537,6 +537,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &220299915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 453684573800896091, guid: 78b3b61ecdadbad40931b95016036bd8, type: 3}
+  m_PrefabInstance: {fileID: 942846593}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &225439029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,11 +1347,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1626076658907987389, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1845789
+      value: 1.18459
       objectReference: {fileID: 0}
     - target: {fileID: 1626076658907987389, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.140202
+      value: 7.1428704
       objectReference: {fileID: 0}
     - target: {fileID: 1626076658907987389, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1478,11 +1483,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1626076659805665945, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1841786
+      value: 1.1841897
       objectReference: {fileID: 0}
     - target: {fileID: 1626076659805665945, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.5830965
+      value: 6.585765
       objectReference: {fileID: 0}
     - target: {fileID: 1626076659805665945, guid: 6d860affefd15ca438be571ab9236023, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2648,6 +2653,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1148542074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 453684572890437533, guid: 78b3b61ecdadbad40931b95016036bd8, type: 3}
+  m_PrefabInstance: {fileID: 942846593}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1335311271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3940,6 +3950,8 @@ MonoBehaviour:
   scoreManager: {fileID: 1986174588}
   waveManager: {fileID: 2072635242}
   tutorialMenu: {fileID: 4531050651396871946}
+  winHeader: {fileID: 220299915}
+  loseHeader: {fileID: 1148542074}
 --- !u!4 &2072635244
 Transform:
   m_ObjectHideFlags: 0
