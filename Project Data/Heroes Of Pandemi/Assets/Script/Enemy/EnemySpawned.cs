@@ -14,9 +14,7 @@ public class EnemySpawned : MonoBehaviour
 
     IEnumerator WaveStartDelay()
     {
-        //
         yield return new WaitForSeconds(2f);
-        //
         GetComponent<EnemyFactory>().startSpawning();
     }
 }
