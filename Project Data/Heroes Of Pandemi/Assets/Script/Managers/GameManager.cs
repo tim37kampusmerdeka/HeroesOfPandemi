@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerCondition(bool win)
     {
+        isGameOver = true;
         if (win)
         {
             Debug.Log("Player Win");

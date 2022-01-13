@@ -31,7 +31,10 @@ public class EnemyMovement : MonoBehaviour
 
     void Move()
     {
-        transform.Translate(-transform.right * speed * Time.deltaTime);
+        if (!GameManager.Instance.isGameOver)
+        {
+            transform.Translate(-transform.right * speed * Time.deltaTime);
+        }
     }
 
     public IEnumerator TurnOffEnemy(UnityEngine.Transform pullObject, float delay)
